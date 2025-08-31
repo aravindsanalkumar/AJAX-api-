@@ -6,7 +6,6 @@ requestObj.onreadystatechange = () => {
     if (requestObj.readyState == 4 && requestObj.status == 200) {
         const usersObj = JSON.parse(requestObj.responseText);
         let searchInput = document.getElementById('search');
-        searchInput.classList.add('d-none');
         let spinner = document.getElementById('spinner');
         spinner.classList.remove('d-none');
         setTimeout(() => {
