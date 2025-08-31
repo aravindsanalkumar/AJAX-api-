@@ -43,6 +43,7 @@ function displayData(obj) {
 
 
 function searchData(obj, search) {
+    search = search.toLowerCase();
     const objData = obj.users.filter(user => user.firstName.toLowerCase().includes(search));
     cardRow.innerHTML = "";
 
