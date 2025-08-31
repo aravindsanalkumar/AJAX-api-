@@ -6,13 +6,21 @@ requestObj.onreadystatechange = () => {
     if (requestObj.readyState == 4 && requestObj.status == 200) {
         const usersObj = JSON.parse(requestObj.responseText);
         let searchInput = document.getElementById('search');
-        if (searchInput.value === "") {
-            displayData(usersObj)
-        }
+        searchInput.classList.add('d-none');
+        let spinner = document.getElementById('spinner');
+        spinner.classList.remove('d-none');
+        setTimeout(() => {
+            searchInput.classList.remove('d-none');
+            spinner.classList.add('d-none');
+            if (searchInput.value === "") {
+                displayData(usersObj)
+            }
 
-        searchInput.addEventListener('keyup', function (e) {
-            searchData(usersObj, e.target.value)
-        })
+            searchInput.addEventListener('keyup', function (e) {
+                searchData(usersObj, e.target.value)
+            })
+        }, 3000);
+
     }
 }
 
