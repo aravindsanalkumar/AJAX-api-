@@ -30,10 +30,11 @@ requestObj.onreadystatechange = () => {
 function displayData(obj) {
     obj.users.forEach(user => {
         let cardRow = document.getElementById('cardRow');
+        let img = user.image;
         cardRow.innerHTML += `<div class="col-md-3" >
                                 <div class="card" style="width: 300px;box-shadow: 5px 5px 5px lightblue;">
                                 <img
-                                src="https://dummyjson.com/icon/emilys/128"
+                                src="${img}"
                                 class="card-img-top"
                                 alt="..."
                                 />
@@ -56,10 +57,11 @@ function searchData(obj, search) {
 
     objData.forEach(user => {
         let cardRow = document.getElementById('cardRow');
+        let img = user.image;
         cardRow.innerHTML += `<div class="col-md-3" >
                                 <div class="card" style="width: 300px;box-shadow: 5px 5px 5px lightblue;">
                                 <img
-                                src="https://dummyjson.com/icon/emilys/128"
+                                src="${img}"
                                 class="card-img-top"
                                 alt="..."
                                 />
